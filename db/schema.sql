@@ -23,6 +23,7 @@
 \c postgres;
 
 DROP DATABASE IF EXISTS emp_db;
+
 CREATE DATABASE emp_db;
 
 \c emp_db;
@@ -34,15 +35,21 @@ CREATE TABLE dept (
 
 CREATE TABLE roles (
   id SERIAL PRIMARY KEY,
-  job_title VARCHAR(100),
-  salary INTEGER NOT NULL,
-  dept_id INTEGER NOT NULL 
+  job_title VARCHAR(100) UNIQUE NOT NULL,
+  salary DECIMAL NOT NULL,
+  dept_id INTEGER NOT NULL,
+  FOREIGN KEY (dept_id)
+  REFERENCES dept(id)
+  ON DELETE SET NULL
 );
 
 CREATE TABLE employees (
   id SERIAL PRIMARY KEY,
-  first_name VARCHAR(100),
-  last_name VARCHAR(100),
+  first_name VARCHAR(100) NOT NULL,
+  last_name VARCHAR(100) NOT NULL,
   role_id INTEGER NOT NULL,
-  manager_id INTEGER
+  manager_id INTEGER,
+  FOREIGN KEY (role_id)
+  REFERENCES roles(id)
+  ON DELETE SET NULL
 );
