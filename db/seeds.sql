@@ -3,7 +3,7 @@ VALUES  ('Sales'),
         ('Engineering'),
         ('Finance'),
         ('Legal');
-
+ 
 INSERT INTO roles (job_title, salary, dept_id)
 VALUES  ('Salesperson', 80000, 1),
         ('Sales Lead', 175000, 1),
