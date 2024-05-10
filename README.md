@@ -4,4 +4,5 @@
 
 https://github.com/J5imonson/employeeTracker
 
-[video]
+[[video]](https://drive.google.com/uc?id=1TIcpQVVv4XmEP01L4c-_kEOqt-OPM8Je&export=download)
+
